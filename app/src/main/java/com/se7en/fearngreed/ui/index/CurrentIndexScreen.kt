@@ -1,9 +1,15 @@
 package com.se7en.fearngreed.ui.index
 
+import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
-import com.se7en.fearngreed.ui.FearNGreedViewModel
 
 @Composable
-fun CurrentIndexScreen(viewModel: FearNGreedViewModel) {
+fun CurrentIndexScreen() {
+    Scaffold(
+        topBar = {
 
+        }
+    ) {
+
+    }
 }
