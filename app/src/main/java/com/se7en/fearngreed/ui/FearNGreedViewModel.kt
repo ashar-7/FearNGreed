@@ -1,4 +1,4 @@
-package com.se7en.fearngreed.viewmodel
+package com.se7en.fearngreed.ui
 
 import androidx.lifecycle.ViewModel
 import com.se7en.fearngreed.data.repository.FGIndexRepository
