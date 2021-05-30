@@ -24,19 +24,24 @@ fun Root() {
             systemUiController.setStatusBarColor(color = primaryVariant)
         }
 
-        val navController = rememberNavController()
+        NavGraph()
+    }
+}
 
-        val currentIndexViewModel = hiltViewModel<CurrentIndexViewModel>()
-        val allIndexesViewModel = hiltViewModel<AllIndexesViewModel>()
+@Composable
+private fun NavGraph() {
+    val navController = rememberNavController()
 
-        NavHost(navController, startDestination = Screen.CurrentIndex.route) {
-            composable(Screen.CurrentIndex.route) {
-                CurrentIndexScreen(viewModel = currentIndexViewModel)
-            }
+    val currentIndexViewModel = hiltViewModel<CurrentIndexViewModel>()
+    val allIndexesViewModel = hiltViewModel<AllIndexesViewModel>()
 
-            composable(Screen.AllIndexes.route) {
-                AllIndexesScreen(viewModel = allIndexesViewModel)
-            }
+    NavHost(navController, startDestination = Screen.CurrentIndex.route) {
+        composable(Screen.CurrentIndex.route) {
+            CurrentIndexScreen(viewModel = currentIndexViewModel)
+        }
+
+        composable(Screen.AllIndexes.route) {
+            AllIndexesScreen(viewModel = allIndexesViewModel)
         }
     }
 }
