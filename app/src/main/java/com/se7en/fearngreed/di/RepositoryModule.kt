@@ -6,12 +6,14 @@ import com.se7en.fearngreed.data.repository.FGIndexRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ViewModelComponent
+import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
-@InstallIn(ViewModelComponent::class)
+@InstallIn(SingletonComponent::class)
 @Module
 object RepositoryModule {
 
+    @Singleton
     @Provides
     fun provideFGIndexRepository(
         api: FGIndexApi

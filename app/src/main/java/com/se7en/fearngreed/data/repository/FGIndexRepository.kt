@@ -22,8 +22,8 @@ class DefaultFGIndexRepository @Inject constructor(
             is Resource.Success -> {
                 emit(Resource.Success(resource.data[0]))
             }
-            is Resource.Failed -> {
-                emit(Resource.Failed(resource.message))
+            is Resource.Error -> {
+                emit(Resource.Error(resource.message))
             }
         }
     }
@@ -42,6 +42,6 @@ class DefaultFGIndexRepository @Inject constructor(
         val indexes = response.body()
         return if (response.isSuccessful && indexes != null && indexes.data.isNotEmpty()) {
             Resource.Success(indexes.data)
-        } else Resource.Failed(indexes?.metadata?.error ?: "Unknown error")
+        } else Resource.Error(indexes?.metadata?.error ?: "Unknown error")
     }
 }
