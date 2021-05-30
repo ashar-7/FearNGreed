@@ -34,7 +34,7 @@ class DefaultFGIndexRepository @Inject constructor(
         emit(resource)
     }
 
-    private fun getIndexes(
+    private suspend fun getIndexes(
         limit: Int,
         dateFormat: String = ""
     ): Resource<List<FGIndex>> {

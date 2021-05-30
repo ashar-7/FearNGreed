@@ -8,7 +8,7 @@ import retrofit2.http.Query
 interface FGIndexApi {
 
     @GET("/fng")
-    fun getIndexes(
+    suspend fun getIndexes(
         @Query("limit") limit: Int,
         @Query("date_format") dateFormat: String
     ): Response<FGIndexResponse>

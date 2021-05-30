@@ -10,7 +10,7 @@ abstract class IndexViewModel<T> : ViewModel() {
     val uiState: StateFlow<IndexUIState<T>> by lazy {
         fetchData().map { it.toIndexUIState() }.stateIn(
             viewModelScope,
-            SharingStarted.WhileSubscribed(),
+            SharingStarted.Lazily,
             initialValue = IndexUIState.Idle
         )
 
