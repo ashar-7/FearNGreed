@@ -13,13 +13,6 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val systemUiController = rememberSystemUiController()
-            val primaryVariant = MaterialTheme.colors.primaryVariant
-
-            SideEffect {
-                systemUiController.setStatusBarColor(color = primaryVariant)
-            }
-
             Root()
         }
     }
