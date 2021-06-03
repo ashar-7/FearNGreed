@@ -84,11 +84,6 @@ private fun SuccessContent(
     modifier: Modifier,
     onViewAllIndexes: () -> Unit
 ) {
-    val indexColor = colorForPercentage(
-        value = index.value / 100f,
-        startColor = MeterStartColor,
-        endColor = MeterEndColor
-    )
     Column(
         modifier = modifier,
         verticalArrangement = Arrangement.spacedBy(4.dp)
@@ -98,8 +93,7 @@ private fun SuccessContent(
                 .widthIn(min = DefaultMeterWidth),
             value = index.value,
             classification = index.classification,
-            time = stringResource(R.string.now),
-            color = indexColor
+            time = stringResource(R.string.now)
         )
 
         Text(

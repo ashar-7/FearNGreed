@@ -14,7 +14,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.se7en.fearngreed.ui.index.utils.colorForPercentage
 import com.se7en.fearngreed.ui.index.utils.onColor
+
+private fun defaultIndexColor(index: Int) = colorForPercentage(
+    value = index / 100f,
+    startColor = MeterStartColor,
+    endColor = MeterEndColor
+)
 
 @Composable
 fun Index(
@@ -22,7 +29,7 @@ fun Index(
     value: Int,
     classification: String,
     time: String,
-    color: Color,
+    color: Color = defaultIndexColor(value),
     onColor: Color = color.onColor
 ) {
     ProvideTextStyle(MaterialTheme.typography.subtitle1) {
