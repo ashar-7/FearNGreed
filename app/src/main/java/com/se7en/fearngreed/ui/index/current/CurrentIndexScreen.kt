@@ -1,4 +1,4 @@
-package com.se7en.fearngreed.ui.index
+package com.se7en.fearngreed.ui.index.current
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
@@ -15,14 +15,15 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.se7en.fearngreed.R
 import com.se7en.fearngreed.model.FGIndex
+import com.se7en.fearngreed.ui.index.Index
+import com.se7en.fearngreed.ui.index.IndexUIState
+import com.se7en.fearngreed.ui.index.MeterGradientColorStops
 import com.se7en.fearngreed.ui.index.meter.FGIndexMeter
-import com.se7en.fearngreed.ui.index.utils.colorForPercentage
 import com.se7en.fearngreed.ui.index.utils.getDateString
 
 private val DefaultMeterWidth = 250.dp
@@ -38,12 +39,7 @@ fun CurrentIndexScreen(
     val index = (uiState as? IndexUIState.Success)?.data
 
     Scaffold(
-        topBar = {
-            TopAppBar(
-                title = { Text(stringResource(R.string.current_index_top_bar_title)) },
-                elevation = 0.dp
-            )
-        }
+        topBar = { CurrentIndexTopBar() }
     ) { padding ->
         Column(
             modifier = Modifier

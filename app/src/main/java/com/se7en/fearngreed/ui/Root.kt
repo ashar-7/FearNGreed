@@ -9,10 +9,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import com.se7en.fearngreed.ui.index.AllIndexesScreen
-import com.se7en.fearngreed.ui.index.AllIndexesViewModel
-import com.se7en.fearngreed.ui.index.CurrentIndexScreen
-import com.se7en.fearngreed.ui.index.CurrentIndexViewModel
+import com.se7en.fearngreed.ui.index.all.AllIndexesScreen
+import com.se7en.fearngreed.ui.index.all.AllIndexesViewModel
+import com.se7en.fearngreed.ui.index.current.CurrentIndexScreen
+import com.se7en.fearngreed.ui.index.current.CurrentIndexViewModel
 import com.se7en.fearngreed.ui.theme.FearNGreedTheme
 
 @Composable
@@ -47,7 +47,10 @@ private fun NavGraph() {
         }
 
         composable(Screen.AllIndexes.route) {
-            AllIndexesScreen(viewModel = allIndexesViewModel)
+            AllIndexesScreen(
+                viewModel = allIndexesViewModel,
+                onNavigateUp = { navController.navigateUp() }
+            )
         }
     }
 }

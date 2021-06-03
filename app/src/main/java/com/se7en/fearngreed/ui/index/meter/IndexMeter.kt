@@ -7,11 +7,7 @@ import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.MaterialTheme
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.State
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.getValue
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
@@ -33,6 +29,7 @@ import kotlin.math.sin
  * @param handStroke Stroke width of the hand
  * @param handCircleRadius Radius of the hand's circular part
  * @param handColor Color for meter hand
+ * @param gradientColorStops Colors and offsets to determine how the colors are dispersed throughout the meter
  */
 @Composable
 fun FGIndexMeter(
@@ -98,6 +95,10 @@ fun FGIndexMeter(
     }
 }
 
+/**
+ * Animates meter progress
+ * @param index index data
+ */
 @Composable
 private fun animatedProgress(index: FGIndex?): State<Float> {
     val progress = remember { Animatable(0f) }
