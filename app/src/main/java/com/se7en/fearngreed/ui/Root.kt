@@ -1,6 +1,7 @@
 package com.se7en.fearngreed.ui
 
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -24,7 +25,9 @@ fun Root() {
             systemUiController.setStatusBarColor(color = primaryVariant)
         }
 
-        NavGraph()
+        Surface {
+            NavGraph()
+        }
     }
 }
 

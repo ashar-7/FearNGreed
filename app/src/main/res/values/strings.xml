@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">FearNGreed</string>
+    <string name="now">Now:</string>
+    <string name="last_updated_date">Last updated: %s</string>
+    <string name="current_index_top_bar_title"><![CDATA[Crypto Fear & Greed Index]]></string>
 </resources>

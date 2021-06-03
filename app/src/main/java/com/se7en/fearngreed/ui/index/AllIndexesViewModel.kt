@@ -12,9 +12,5 @@ class AllIndexesViewModel @Inject constructor(
     private val repository: FGIndexRepository
 ) : IndexViewModel<List<FGIndex>>() {
 
-    init {
-        println("initializing all view model")
-    }
-
     override fun fetchData(): Flow<Resource<List<FGIndex>>> = repository.getAllIndexes()
 }

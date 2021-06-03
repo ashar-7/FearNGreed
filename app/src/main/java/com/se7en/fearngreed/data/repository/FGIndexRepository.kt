@@ -2,6 +2,7 @@ package com.se7en.fearngreed.data.repository
 
 import com.se7en.fearngreed.data.remote.api.FGIndexApi
 import com.se7en.fearngreed.model.FGIndex
+import com.se7en.fearngreed.model.toFGIndexList
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
@@ -34,14 +35,11 @@ class DefaultFGIndexRepository @Inject constructor(
         emit(resource)
     }
 
-    private suspend fun getIndexes(
-        limit: Int,
-        dateFormat: String = ""
-    ): Resource<List<FGIndex>> {
-        val response = api.getIndexes(limit, dateFormat)
+    private suspend fun getIndexes(limit: Int): Resource<List<FGIndex>> {
+        val response = api.getIndexes(limit)
         val indexes = response.body()
         return if (response.isSuccessful && indexes != null && indexes.data.isNotEmpty()) {
-            Resource.Success(indexes.data)
+            Resource.Success(indexes.data.toFGIndexList())
         } else Resource.Error(indexes?.metadata?.error ?: "Unknown error")
     }
 }

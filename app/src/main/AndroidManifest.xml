@@ -15,6 +15,7 @@
         android:theme="@style/Theme.FearNGreed">
         <activity
             android:name=".ui.MainActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|locale|layoutDirection"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.FearNGreed.NoActionBar">
