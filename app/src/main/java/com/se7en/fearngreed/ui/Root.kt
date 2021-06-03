@@ -4,6 +4,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
+import androidx.compose.ui.graphics.Color
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -23,6 +24,7 @@ fun Root() {
 
         SideEffect {
             systemUiController.setStatusBarColor(color = primaryVariant)
+            systemUiController.setNavigationBarColor(color = Color.Black)
         }
 
         Surface {
