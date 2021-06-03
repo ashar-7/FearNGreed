@@ -3,4 +3,5 @@
     <string name="now">Now:</string>
     <string name="last_updated_date">Last updated: %s</string>
     <string name="current_index_top_bar_title"><![CDATA[Crypto Fear & Greed Index]]></string>
+    <string name="view_hist_data_btn">View Historical Data</string>
 </resources>

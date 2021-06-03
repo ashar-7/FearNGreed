@@ -40,7 +40,10 @@ private fun NavGraph() {
 
     NavHost(navController, startDestination = Screen.CurrentIndex.route) {
         composable(Screen.CurrentIndex.route) {
-            CurrentIndexScreen(viewModel = currentIndexViewModel)
+            CurrentIndexScreen(
+                viewModel = currentIndexViewModel,
+                onViewAllIndexes = { navController.navigate(Screen.AllIndexes.route) }
+            )
         }
 
         composable(Screen.AllIndexes.route) {
