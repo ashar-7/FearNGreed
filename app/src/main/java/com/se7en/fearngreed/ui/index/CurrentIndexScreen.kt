@@ -26,14 +26,6 @@ import com.se7en.fearngreed.ui.index.utils.colorForPercentage
 import com.se7en.fearngreed.ui.index.utils.getDateString
 
 private val DefaultMeterWidth = 250.dp
-private val MeterStartColor = Color.Red
-private val MeterMidColor = Color.Yellow
-private val MeterEndColor = Color.Green
-private val MeterGradientColorStops = listOf(
-    0.5f to MeterStartColor,
-    0.75f to MeterMidColor,
-    1f to MeterEndColor
-)
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
